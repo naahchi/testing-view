@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>view-source:codemoney.in</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
 
-<!-- <style>
+<style>
 body{
     margin: 0;
     padding: 0;
@@ -129,11 +129,11 @@ input[type="checkbox"]:checked + label::before {
     font-family: monospace;
     color: #c586c0;
 }
-</style> -->
+</style>
 </head>
 
 <body>
-<div id="mobile-layout" style="display: none;">
+<!-- <div id="mobile-layout" style="display: none;">
 <header>
         <nav class="top_nav">
             <a href="./" class="logo">Codemoney</a>
@@ -147,7 +147,7 @@ input[type="checkbox"]:checked + label::before {
             <a href="#">Menu</a>
         </nav>
     </header>
-</div>
+</div> -->
 
 <div id="desktop-layout" style="display: none;">
 <div class="header">Line wrap&nbsp;<div class="checkbox-container"><input type="checkbox" id="myCheckbox"><label for="myCheckbox"></label></div></div>
@@ -208,7 +208,7 @@ input[type="checkbox"]:checked + label::before {
 //     document.getElementById("desktop-layout").style.display = "block";
 //   }
 if (isMobileDevice && isMobileDevice) {
-    document.getElementById("mobile-layout").style.display = "block";
+    window.location.href = "https://codemoney.in";
   } else {
     document.getElementById("desktop-layout").style.display = "block";
   }
