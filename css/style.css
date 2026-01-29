@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    background: #121212;
+    color: #fff;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+    /* font-size: 14px; */
+}
+.header {
+    display: flex;
+    background: #404040;
+    font-size: 12px;
+    padding: 0 0 1px 0;
+    border-bottom: 1px solid #b3b3b3;
+    color: #fff;
+    /* color: #ccc; */
+}
+
+.header input[type="checkbox"] {
+  display: none; /* or appearance: none; */
+}
+/* Style the custom checkbox (unchecked state) using the label's ::before pseudo-element */
+input[type="checkbox"] + label::before {
+  content: ""; /* Required for pseudo-elements to render */
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-bottom: 2px;
+  border: 1px solid #7f83a2; /* Custom border color */
+  border-radius: 3px;
+  background-color: #eeeeee00; /* Desired unchecked background color */
+  margin-right: 0.5em; /* Spacing between box and label text */
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* Style the custom checkbox (checked state) */
+input[type="checkbox"]:checked + label::before {
+  background-color: #3d404e; /* Desired checked background color */
+  color: white; /* Color of the checkmark */
+  text-align: center;
+  content: "\2713"; /* Unicode for a checkmark */
+  font-weight: bold;
+  background-color: rgb(0, 119, 255);
+  border: 1px solid rgb(0, 119, 255);
+  font-size: 1em;
+  line-height: 1.15em; /* Center the checkmark vertically */
+}
+
+.header span {
+    color: #9cdcfe;
+}
+
+.editor {
+    display: flex;
+}
+
+.lines {
+    background: #404040;
+    width: 25px;
+    padding: 0 5px 0 0;
+    text-align: right;
+    user-select: none;
+    color: #858585;
+    border-right: 1px solid #b3b3b3;
+}
+
+.lines div {
+    width: 100%;
+    text-align: right;
+    font-size: 10px;
+    height: 15px;
+}
+
+.code {
+    padding: 0 5px;
+    font-size: 13px;
+    white-space: pre;
+    overflow-x: auto;
+    flex: 1;
+}
+.disabled {
+    color: rgb(180, 180, 180);
+}
+.link {
+    color: #b4aaff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tag {
+    color: #569cd6;
+}
+
+.attr {
+    color: #9cdcfe;
+}
+
+.value {
+    color: #ce9178;
+}
+
+.comment {
+    color: #6a9955;
+}
+
+.keyword {
+    color: #c586c0;
+}
