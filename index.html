@@ -4,153 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>view-source:codemoney.in</title>
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
-
-<style>
-body{
-    margin: 0;
-    padding: 0;
-}
-.header {
-    display: flex;
-    background: #404040;
-    font-size: 12px;
-    padding: 0 0 1px 0;
-    border-bottom: 1px solid #b3b3b3;
-    color: #fff;
-    font-family: monospace;
-    /* color: #ccc; */
-}
-
-.header input[type="checkbox"] {
-  display: none; /* or appearance: none; */
-}
-/* Style the custom checkbox (unchecked state) using the label's ::before pseudo-element */
-input[type="checkbox"] + label::before {
-  content: ""; /* Required for pseudo-elements to render */
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin-bottom: 2px;
-  border: 1px solid #7f83a2; /* Custom border color */
-  border-radius: 3px;
-  background-color: #eeeeee00; /* Desired unchecked background color */
-  margin-right: 0.5em; /* Spacing between box and label text */
-  vertical-align: middle;
-  cursor: pointer;
-}
-/* Style the custom checkbox (checked state) */
-input[type="checkbox"]:checked + label::before {
-  background-color: #3d404e; /* Desired checked background color */
-  color: white; /* Color of the checkmark */
-  text-align: center;
-  content: "\2713"; /* Unicode for a checkmark */
-  font-weight: bold;
-  background-color: rgb(0, 119, 255);
-  border: 1px solid rgb(0, 119, 255);
-  font-size: 1em;
-  line-height: 1.15em; /* Center the checkmark vertically */
-}
-
-.header span {
-    color: #9cdcfe;
-}
-
-.editor {
-    display: flex;
-    font-family: monospace;
-    /* padding: 0 0 0 10px; */
-    background: #121212;
-    color: #fff;
-}
-
-.lines {
-    background: #404040;
-    width: 32px;
-    padding: 0 5px 0 0;
-    text-align: right;
-    user-select: none;
-    color: #858585;
-    border-right: 1px solid #b3b3b3;
-}
-
-.lines div {
-    font-family: monospace;
-    width: 100%;
-    text-align: right;
-    font-size: 10px;
-    height: 15px;
-}
-
-.code {
-    font-family: monospace;
-    padding: 0 5px;
-    font-size: 13px;
-    white-space: pre;
-    overflow-x: auto;
-    flex: 1;
-}
-.text{
-    font-family: monospace;
-    color: #fff;
-}
-.disabled {
-    font-family: monospace;
-    color: rgb(180, 180, 180);
-}
-.link {
-    font-family: monospace;
-    color: #b4aaff;
-    text-decoration: underline;
-    cursor: pointer;
-}
-.tag {
-    font-family: monospace;
-    color: #569cd6;
-}
-
-.attr {
-    font-family: monospace;
-    color: #9cdcfe;
-}
-
-.value {
-    font-family: monospace;
-    color: #ce9178;
-}
-
-.comment {
-    font-family: monospace;
-    color: #6a9955;
-}
-
-.keyword {
-    font-family: monospace;
-    color: #c586c0;
-}
-</style>
+    <title>view-source:https://codemoney.in</title>
+     <link rel="stylesheet" href="https://www.codemoney.in/css/style.css">
 </head>
 
 <body>
-<!-- <div id="mobile-layout" style="display: none;">
-<header>
-        <nav class="top_nav">
-            <a href="./" class="logo">Codemoney</a>
-            <button id="themeBtn">:::::</button>
-        </nav>
-        <nav class="bottom_nav">
-            <a href="./">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./contact.html">Contact</a>
-            <a href="./404.html">Help</a>
-            <a href="#">Menu</a>
-        </nav>
-    </header>
-</div> -->
+<div id="desktop-layout"></div>
 
-<div id="desktop-layout" style="display: none;">
-<div class="header">Line wrap&nbsp;<div class="checkbox-container"><input type="checkbox" id="myCheckbox"><label for="myCheckbox"></label></div></div>
+<script>
+    (function () {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const isMobileUA = /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(ua);
+    const isMobileDevice = isMobileUA && isTouchDevice;
+    const isDesktopViewport = window.innerWidth > 1024;
+    const desktop = document.getElementById("desktop-layout");
+    if (isMobileDevice) {
+        document.getElementById("desktop-layout").style.display = "none";
+        window.location.href = "https://www.codemoney.in";
+    } else {
+        desktop.innerHTML = `<div class="top_header">Line wrap&nbsp;<div class="checkbox-container"><input type="checkbox" id="myCheckbox"><label for="myCheckbox"></label></div></div>
 <div class="editor">
 <div class="lines"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
 <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
@@ -169,7 +42,7 @@ input[type="checkbox"]:checked + label::before {
 <span class="tag">&lt;body&gt;</span>
     <span class="comment">&lt;!-- Mobile Top Sticky Header --&gt;</span>
     <span class="tag">&lt;nav <span class="attr">class</span>=<span class="value">"top_nav"</span>&gt;</span>
-        <span class="tag">&lt;a <span class="attr">href</span>=<span class="link">"/"</span> <span class="attr">class</span>=<span class="value">"logo"</span>&gt;</span><span class="text">Codemoney</span><span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;a <span class="attr">href</span>=<span class="link">"/"</span> <span class="attr">class</span>=<span class="value">"logo"</span>&gt;</span><span class="text"><$Codemoney<small>.IN</small>/></span><span class="tag">&lt;/a&gt;</span>
         <span class="tag">&lt;button <span class="attr">id</span>=<span class="value">"themeBtn"</span>&gt;</span><span class="text">Dark</span><span class="tag">&lt;/button&gt;</span>
     <span class="tag">&lt;/nav&gt;</span>
     <span class="comment">&lt;!-- Mobile Top Sticky Header --&gt;</span>
@@ -192,27 +65,9 @@ input[type="checkbox"]:checked + label::before {
 <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span>
 </div>
-</div>
-</div>
-
-<script>
-(function () {
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  const isMobileUA = /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(ua);
-  const isMobileDevice = isMobileUA && isTouchDevice;
-//   const isDesktopViewport = window.innerWidth > 1024;
-//   if (isMobileDevice && isMobileDevice && isDesktopViewport) {
-//     document.getElementById("mobile-layout").style.display = "block";
-//   } else {
-//     document.getElementById("desktop-layout").style.display = "block";
-//   }
-if (isMobileDevice && isMobileDevice) {
-    window.location.href = "https://codemoney.in";
-  } else {
-    document.getElementById("desktop-layout").style.display = "block";
-  }
-})();
+</div>`;
+    }
+    })();
 </script>
 </body>
 </html>
